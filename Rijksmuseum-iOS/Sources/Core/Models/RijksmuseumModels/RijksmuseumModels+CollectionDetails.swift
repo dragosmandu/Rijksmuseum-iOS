@@ -39,7 +39,7 @@ extension RijksmuseumModels {
         let webImage: ImageInfo?
         let productionPlaces: [String]
         let priref: String?
-        let description: String
+        let description: String?
         let acquisition: Acquisition?
         
         init(with dto: RijksmuseumApiDtos.CollectionDetails) {

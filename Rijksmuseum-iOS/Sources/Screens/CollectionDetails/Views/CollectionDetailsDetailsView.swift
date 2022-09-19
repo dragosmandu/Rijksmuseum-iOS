@@ -145,18 +145,13 @@ extension CollectionDetailsDetailsScrollView {
     func configure(with viewModel: ViewModel) {
         refreshControl?.endRefreshing()
         UIView.animate(withDuration: 0.3, delay: 0) { [weak self] in
-            guard let err = viewModel.err else {
-                self?.idLabel.text = viewModel.id
-                self?.acquisitionLabel.text = viewModel.acquisitionDateStr
-                self?.prirefLabel.text = viewModel.prirefStr
-                self?.descLabel.text = viewModel.description
-                
-                self?.updateProductionPlaces(viewModel.productionPlaces)
-                
-                return
-            }
+            self?.idLabel.text = viewModel.id
+            self?.acquisitionLabel.text = viewModel.acquisitionDateStr
+            self?.prirefLabel.text = viewModel.prirefStr
+            self?.descLabel.text = viewModel.description
+            self?.errLabel.text = viewModel.err?.localizedDescription
             
-            self?.errLabel.text = err.localizedDescription
+            self?.updateProductionPlaces(viewModel.productionPlaces)
         }
     }
     
