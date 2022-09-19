@@ -12,6 +12,7 @@ struct RijksmuseumModels {
     struct Links {
         let selfLink: URL?
         let webLink: URL?
+        let searchLink: URL?
         
         init?(with dto: RijksmuseumApiDtos.Links?) {
             guard let dto = dto else { return nil }
@@ -26,6 +27,12 @@ struct RijksmuseumModels {
                 webLink = URL(string: webLinkStr)
             } else {
                 webLink = nil
+            }
+            
+            if let searchLinkStr = dto.search {
+                searchLink = URL(string: searchLinkStr)
+            } else {
+                searchLink = nil
             }
         }
     }
