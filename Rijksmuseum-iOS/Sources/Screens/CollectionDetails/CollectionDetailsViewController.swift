@@ -66,6 +66,7 @@ class CollectionDetailsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.tintColor = .white
     }
     
 }

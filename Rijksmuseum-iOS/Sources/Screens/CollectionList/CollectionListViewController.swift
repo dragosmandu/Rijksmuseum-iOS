@@ -97,6 +97,7 @@ class CollectionListViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.barStyle = .default
+        navigationController?.navigationBar.tintColor = .black
     }
     
 }
